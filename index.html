@@ -30,13 +30,21 @@
             z-index: -1;
         }
 
-        .content, .status-message, .script-message {
+        .enter-button, .content, .status-message, .script-message {
             text-align: center;
             color: white;
             z-index: 1;
         }
 
-        .status-message, .script-message {
+        .enter-button {
+            cursor: pointer;
+        }
+
+        .enter-button:hover {
+            text-decoration: underline;
+        }
+
+        .status-message, .script-message, .content {
             display: none;
         }
 
@@ -93,6 +101,7 @@
 </head>
 <body>
     <div id="particles-js"></div>
+    <div class="enter-button" id="enter-button">Click to Enter</div>
     <div class="content" id="content">
         <!-- Add your image here -->
         <img src="o.png" alt="">
@@ -110,7 +119,7 @@
     </div>
 
     <!-- Background audio -->
-    <audio id="background-audio" autoplay loop>
+    <audio id="background-audio" loop>
         <source src="0724(1).wav" type="audio/wav">
         Your browser does not support the audio element.
     </audio>
@@ -264,9 +273,12 @@
             type();
         }
 
-        window.onload = () => {
+        document.getElementById('enter-button').addEventListener('click', () => {
+            document.getElementById('enter-button').style.display = 'none';
+            document.getElementById('content').style.display = 'block';
+            document.getElementById('background-audio').play();
             startTypewriter();
-        };
+        });
 
         document.getElementById('status-link').addEventListener('click', (event) => {
             event.preventDefault();
