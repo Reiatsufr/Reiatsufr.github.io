@@ -34,13 +34,10 @@
             text-align: center;
             color: white;
             z-index: 1;
-            display: none; /* Hide the content initially */
         }
 
-        .enter-button-container {
-            text-align: center;
-            color: white;
-            z-index: 1;
+        .status-message, .script-message {
+            display: none;
         }
 
         .content a {
@@ -92,27 +89,10 @@
             height: auto;
             margin-bottom: 20px; /* Adds some space below the image */
         }
-
-        .enter-button {
-            padding: 10px 20px;
-            background-color: #00BFFF;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-
-        .enter-button:hover {
-            background-color: #007ACC;
-        }
     </style>
 </head>
 <body>
     <div id="particles-js"></div>
-    <div class="enter-button-container">
-        <button class="enter-button" id="enter-button">Click to Enter</button>
-    </div>
     <div class="content" id="content">
         <!-- Add your image here -->
         <img src="o.png" alt="">
@@ -130,7 +110,7 @@
     </div>
 
     <!-- Background audio -->
-    <audio id="background-audio" loop>
+    <audio id="background-audio" autoplay loop>
         <source src="0724(1).wav" type="audio/wav">
         Your browser does not support the audio element.
     </audio>
@@ -298,12 +278,6 @@
             event.preventDefault();
             document.getElementById('content').style.display = 'none';
             document.getElementById('script-message').style.display = 'block';
-        });
-
-        document.getElementById('enter-button').addEventListener('click', () => {
-            document.querySelector('.enter-button-container').style.display = 'none';
-            document.getElementById('content').style.display = 'block';
-            document.getElementById('background-audio').play();
         });
     </script>
 </body>
