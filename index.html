@@ -108,7 +108,8 @@
         <p><a href="#" id="username">Reiatsu.fr</a> - <span id="typewriter"></span></p>
         <p class="links">
             <a href="https://discord.gg/reiatsufr" target="_blank">discord</a> /
-            <a href="#" id="status-link">status</a>
+            <a href="#" id="status-link">status</a> /
+            <a href="tos.html" target="_blank">tos</a>
         </p>
     </div>
     <div class="status-message" id="status-message">FULLY OPERATIONAL</div>
@@ -291,6 +292,11 @@
             event.preventDefault();
             document.getElementById('content').style.display = 'none';
             document.getElementById('script-message').style.display = 'block';
+        });
+
+        document.getElementById('tos-link').addEventListener('click', (event) => {
+            event.preventDefault();
+            window.location.href = 'tos.html';
         });
     </script>
 </body>
